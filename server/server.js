@@ -38,7 +38,7 @@ app.get("/api/v1/restaurants", async (req, res) =>{
             results: results.rows.length,
             status: "success",
             data: {
-                restaurant: results.rows,
+                restaurants: results.rows,
             },
         });  // response are in json and pass in json object
 
