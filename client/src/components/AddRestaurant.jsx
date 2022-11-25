@@ -6,14 +6,14 @@ const AddRestaurant = () => {
         <form action="">
             <div className="form-row">
                 <div className="col">
-                    <input type="text" className="form-control" placeholder = "name"/>
+                    <input type="text" className="form-control" placeholder = "Name"/>
                 </div>
                 <div className="col">
-                    <input className="form-control" type="text" placeholder="location"/>
+                    <input className="form-control" type="text" placeholder="Location"/>
                 </div>
                 <div className="col">
                     {/* <select className="custom-select"> this can remove the margins so the webpage loads properly */}
-                    <select className="custom-select my-1 mr-sm-2">
+                    <select className="custom-select">
                         {/* This first option will disable the text in the search box as it should not be a selection */}
                         <option disabled>Price Range</option> 
                         <option value="1">$</option>
