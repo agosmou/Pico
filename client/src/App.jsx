@@ -1,6 +1,7 @@
+// this is the parent app that will wrap the entire application
 import React from 'react';
 import{BrowserRouter as Router, Routes, Route} from "react-router-dom"; // library
-import Home from "./routes/Home" // current directory
+import Home from "./routes/Home" // "./" is current directory
 import UpdatePage from "./routes/UpdatePage"
 import RestaurantDetailPage from "./routes/RestaurantDetailPage"
 import { RestaurantsContextProvider } from './context/RestaurantsContext';
