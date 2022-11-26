@@ -6,7 +6,7 @@ export const RestaurantsContext = createContext();
 
 export const RestaurantsContextProvider = props => {  // create context provider component and this is to wrap the application
     const [restaurants, setRestaurants] = useState([]); //useState hook to store list of restaurants. An array that fetches from backend server 
-    //const [selectedRestaurant, setSelectedRestaurant] = useState(null);
+    const [selectedRestaurant, setSelectedRestaurant] = useState([null]);
 
 
     // A function for adding a restaurant must be defined so that it populated on the webpage after updating to PostgreSQL
@@ -20,8 +20,8 @@ export const RestaurantsContextProvider = props => {  // create context provider
             restaurants,
             setRestaurants,
             addRestaurants,
-            //selectedRestaurant,
-            //setSelectedRestaurant,
+            selectedRestaurant,
+            setSelectedRestaurant,
           }}> 
             {props.children}
         </RestaurantsContext.Provider>
