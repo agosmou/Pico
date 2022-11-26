@@ -54,15 +54,20 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
     console.log(req.params.id);
 
     try{
-        const results = await db.query(
+        const restaurant = await db.query(
             "select * from restaurants where id = $1", [req.params.id] // paramterized query. Never use string interpolation - it's susceptible to SQL injection attacks
         );
         // select * from restaurants where id = req.params.id    
 
+        const reviews = await db.query(
+            "select * from reviews where restaurant_id = $1", [req.params.id] // paramterized query. Never use string interpolation - it's susceptible to SQL injection attacks
+        );
+
         res.status(200).json({
             status: "success",
             data: {
-                restaurant: results.rows[0], // rows always returns array so we just need the first item in the array, the id
+                restaurant: restaurant.rows[0], // rows always returns array so we just need the first item in the array, the id
+                reviews: reviews
             },
         });
 
@@ -129,6 +134,29 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
         console.log(err);
     };
 });
+
+
+// Add a Review
+app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
+    try {
+      const newReview = await db.query(
+        "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *;",
+        [req.params.id, req.body.name, req.body.review, req.body.rating]
+      );
+      console.log(newReview);
+      res.status(201).json({
+        status: "success",
+        data: {
+          review: newReview.rows[0],
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  });
+
+
+
 
 // -----------------------------------------------------------------------------
 
