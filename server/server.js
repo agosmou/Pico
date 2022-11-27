@@ -67,7 +67,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
             status: "success",
             data: {
                 restaurant: restaurant.rows[0], // rows always returns array so we just need the first item in the array, the id
-                reviews: reviews
+                reviews: reviews.rows,
             },
         });
 
