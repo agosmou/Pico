@@ -25,7 +25,7 @@ import { RestaurantsContext } from "../context/RestaurantsContext";
     }, []); // pass in empty dependency array
 
  const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); //prevents page reload
     const updatedRestaurant = await RestaurantFinder.put(`/${id}`, {
         name,
         location,

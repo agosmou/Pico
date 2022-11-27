@@ -12,10 +12,8 @@ const AddRestaurant = () => {
         e.preventDefault(); // default behavior in html is to reload page, however in React this will cause us to lose our state. So this must be prevented
         try {
             const response = await RestaurantFinder.post("/", { //post method to send data back
-              name: name,
-              // shorthand would be
-              // name, location,
-              location: location,
+              name,
+              location,
               price_range: priceRange,
             });
             addRestaurants(response.data.data.restaurant);

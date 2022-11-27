@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import RestaurantFinder from "../apis/RestaurantFinder";
-import { useParams, useNavigate } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const AddReview = () => {
   const { id } = useParams();
-//   console.log(id);
+  //  const location = useLocation();
+  //  console.log(location);
+  console.log(id);
 
   const [name, setName] = useState("");
   const [reviewText, setReviewText] = useState("");
@@ -18,13 +20,9 @@ const AddReview = () => {
         review: reviewText,
         rating,
       });
-      
-    window.location.reload(); // reloads the page to display the new review added after submission
-
+      window.location.reload(); // reloads the page
     } catch (err) {}
   };
-
-
   return (
     <div className="mb-2">
       <form action="">

@@ -3,11 +3,10 @@ import StarRating from "./StarRating";
 
 const Reviews = ({ reviews }) => {
   return (
-
     <div className="row row-cols-3 mb-2">
 
-      {reviews.map((review) => {
-        return (
+      {reviews && reviews.map((review) => {
+        return (         
           <div
             key={review.id}
             className="card text-white bg-primary mb-3 mr-4"
@@ -83,8 +82,7 @@ const Reviews = ({ reviews }) => {
           <p className="card-text">This restaurant was awesome</p>
         </div>
       </div> */}
-      
-    </div>
+     </div> 
   );
 };
 
