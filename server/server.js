@@ -32,13 +32,18 @@ app.use(express.json());
 // Get all restaurants - C(R)UD
 app.get("/api/v1/restaurants", async (req, res) =>{
     try{ // for async-await, use a try-catch
-        const results = await db.query("select * from restaurants");
-        //console.log(results);
+        //const results = await db.query("select * from restaurants");
+        const restaurantRatingsData = await db.query(
+            "select * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id;"
+          );
+        //console.log("results",results);
+        //console.log("restaurant data", restaurantRatingsData);    
+
         res.status(200).json({
-            results: results.rows.length,
+            results: restaurantRatingsData.rows.length,
             status: "success",
             data: {
-                restaurants: results.rows,
+                restaurants: restaurantRatingsData.rows,
             },
         });  // response are in json and pass in json object
 
@@ -55,7 +60,7 @@ app.get("/api/v1/restaurants/:id", async (req, res) => {
 
     try{
         const restaurant = await db.query(
-            "select * from restaurants where id = $1", [req.params.id] // paramterized query. Never use string interpolation - it's susceptible to SQL injection attacks
+            "select * from restaurants left join (select restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating from reviews group by restaurant_id) reviews on restaurants.id = reviews.restaurant_id where id = $1", [req.params.id] // paramterized query. Never use string interpolation - it's susceptible to SQL injection attacks
         );
         // select * from restaurants where id = req.params.id    
 
