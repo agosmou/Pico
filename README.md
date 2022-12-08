@@ -1,4 +1,5 @@
-# Pico - Record your food experiences!
+# Pico
+Record your food experience by adding restaurants to the web page. Once the restaurant is added you can update it's properties on the webpage or simply add more reviews to it. Enjoy!
 
 ##
 Built using PERN stack
