@@ -1,7 +1,7 @@
 # Pico
 Record your food experience by adding restaurants to the web page. Once the restaurant is added you can update it's properties on the webpage or simply add more reviews to it. Enjoy!
 
-##
+## Tech Stack
 Built using PERN stack
 <p align="left">
 <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/postgresql-colored.svg" width="36" height="36" alt="PostgreSQL" /></a>
@@ -10,10 +10,10 @@ Built using PERN stack
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
 </p>
 
-#
+# How to Use
 Create a clone and launch the server and client on your localhost
 
-#
+# Demo
 Screenshots
 
 ![Screenshot 2022-12-07 233708](https://user-images.githubusercontent.com/73868258/206397175-232adccf-bcd9-49c9-afa7-6ab4ab275c06.png)
