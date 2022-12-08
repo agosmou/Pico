@@ -67,7 +67,7 @@ const AddReview = () => {
         <button
           type="submit"
           onClick={handleSubmitReview}
-          className="btn btn-primary"
+          className="btn btn-warning"
         >
           Submit
         </button>
