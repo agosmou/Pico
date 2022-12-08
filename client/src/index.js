@@ -4,6 +4,7 @@ import React from 'react';
 //import ReactDOM from 'react-dom'   
 import { createRoot } from 'react-dom/client';
 import App from "./App"
+import "./App.css"
 
 // removed reactDOM per above
 //ReactDOM.render(<App/>, document.getElementById("root"))
@@ -12,4 +13,4 @@ import App from "./App"
 // added createRoot instead
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<App/>);
+root.render(<App />);

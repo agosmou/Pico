@@ -21,7 +21,7 @@ const AddReview = () => {
         rating,
       });
       window.location.reload(); // reloads the page
-    } catch (err) {}
+    } catch (err) { }
   };
   return (
     <div className="mb-2">
@@ -33,7 +33,7 @@ const AddReview = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               id="name"
-              placeholder="name"
+              placeholder="Name"
               type="text"
               className="form-control"
             />
