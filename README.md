@@ -1,9 +1,4 @@
-# Pico
-Record your food experiences!
-
-
-#
-Create a clone and launch the server and client on your localhost
+# Pico - Record your food experiences!
 
 ##
 Built using PERN stack
@@ -13,6 +8,9 @@ Built using PERN stack
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
 <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg" width="36" height="36" alt="NodeJS" /></a>
 </p>
+
+#
+Create a clone and launch the server and client on your localhost
 
 #
 Screenshots
